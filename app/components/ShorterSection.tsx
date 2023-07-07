@@ -9,7 +9,7 @@ const ShorterSection = () => {
   const {
     handleCopyClick,
     handleSubmit,
-    setUrl,
+    handleChange,
     error,
     copiedIndex,
     links,
@@ -17,10 +17,7 @@ const ShorterSection = () => {
   } = useShortener();
 
   return (
-    <section
-      className="relative bg-shorterSection px-[24px] pb-[80px] lg:px-[0px]"
-      id="linkSec"
-    >
+    <section className="relative bg-shorterSection px-[24px] pb-[80px] lg:px-[0px]">
       {/* Shorten a link here */}
       <div className="w-full min-h-[160px] bg-bgShortenMobile translate-y-[-80px] bg-secondary bg-contain bg-no-repeat bg-right-top rounded-[10px] lg:w-[75%] lg:mx-[auto] lg:bg-bgShortenDesktop lg:bg-cover">
         <form
@@ -32,9 +29,9 @@ const ShorterSection = () => {
             value={url}
             placeholder="Shorten a link here"
             className={`w-full h-[48px] pl-[15px] outline-none rounded-[8px] ${
-              !!error ? "border-2 border-error" : ""
+              !!error ? "border border-error" : ""
             }`}
-            onChange={(e) => setUrl(e.target.value)}
+            onChange={handleChange}
           />
           {!!error && (
             <p className="text-error italic text-[12px] lg:absolute lg:text-[16px] lg:bottom-[27px]">
@@ -42,7 +39,7 @@ const ShorterSection = () => {
             </p>
           )}
           <button
-            className="w-full h-[48px] bg-primary rounded-[8px] text-white lg:w-[190px] hover:bg-hover"
+            className="w-full h-[48px] bg-primary rounded-[8px] text-white lg:w-[190px] hover:bg-hover font-semibold"
             type="submit"
           >
             Shorten It!
@@ -104,7 +101,7 @@ const ShorterSection = () => {
         </p>
 
         {/* Cards Container*/}
-        <div className="relative px-[24px] flex flex-col gap-[90px] lg:px-0 ">
+        <div className="relative px-[24px] flex flex-col lg:grid lg:grid-cols-3 gap-20 lg:gap-10 lg:px-0 ">
           <div className="bg-teal-400 w-2 h-full absolute top-0 left-1/2 -translate-x-1/2 lg:h-2 lg:top-1/2 lg:right-0 lg:-translate-x-0 lg:left-0 lg:w-full" />
           {/* Card Brand Recognition */}
           <InfoCard
@@ -113,7 +110,7 @@ const ShorterSection = () => {
             subTitle=" Boost your brand recognition with each click. Generic links
               don't mean a thing. Branded links help instil confidence in
               your content."
-            className="md:h-[270px] md:px-[35px]"
+            // className="md:h-[270px] md:px-[35px]"
           />
 
           {/* Card Detailed Records*/}
@@ -121,7 +118,7 @@ const ShorterSection = () => {
             icon={detailRec}
             title="Detailed Records"
             subTitle="Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions."
-            className="md:h-[270px] md:px-[35px] desktop:mt-[45px]"
+            className="lg:mt-[45px]"
           />
 
           {/* Card Fully Customizable */}
@@ -129,7 +126,7 @@ const ShorterSection = () => {
             icon={fullyCustom}
             title="Fully Customizable"
             subTitle="Improve brand awareness and content discoverability through customizable links, supercharging audience engagement."
-            className="md:self-end md:h-[270px] md:px-[35px] desktop:mt-[90px]"
+            className="lg:mt-[90px]"
           />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Result } from "../types";
 import Shorter from "../api/shorter";
 
@@ -28,6 +28,12 @@ const useShortener = () => {
     }
   };
 
+  /* handle change */
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUrl(e.target.value);
+    setError("");
+  };
+
   /* API errors */
   const errors: { [key: number]: string } = {
     1: "No URL specified",
@@ -39,7 +45,7 @@ const useShortener = () => {
     7: "No code specified ('code' parameter is empty)",
     8: "Invalid code submitted (code not found/there is no such short-link)",
     9: "Missing required parameters",
-    10: "Trying to shorten a disallowed Link. More information on disallowed links",
+    10: "Link is disallowed",
   };
 
   useEffect(() => {
@@ -69,6 +75,7 @@ const useShortener = () => {
     copiedIndex,
     links,
     url,
+    handleChange,
   };
 };
 

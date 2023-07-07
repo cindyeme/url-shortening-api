@@ -2,7 +2,10 @@ import Image from 'next/image';
 
 const HeroSection = () => {
   return (
-    <section className="pr-[24px] overflow-x-hidden mb-[150px] lg:px-0 lg:mt-[75px]">
+    <section
+      className="pr-[24px] overflow-x-hidden mb-[150px] lg:px-0 lg:mt-[75px]"
+      id="linkSec"
+    >
       <div className="flex flex-col gap-[50px] lg:w-[75%] lg:mx-auto lg:flex-row-reverse lg:gap-[80px]">
         <div className="lg:box-border flex justify-center lg:w-[30%]">
           <Image

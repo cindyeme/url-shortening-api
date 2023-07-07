@@ -4,12 +4,12 @@ type Props = {
   icon: any;
   title: string;
   subTitle: string;
-  className: string;
+  className?: string;
 };
 const InfoCard = ({ icon, title, subTitle, className }: Props) => {
   return (
     <div
-      className={`bg-white relative pt-[70px] px-[20px] pb-[45px] rounded-[10px] md:w-[350px] md:self-start ${className}`}
+      className={`bg-white relative pt-[70px] px-[20px] pb-[45px] rounded-[10px]  lg:self-start ${className}`}
     >
       <div className="w-[90px] h-[90px] bg-secondary absolute top-[-45px] left-[50%] -translate-x-[50%] rounded-full flex justify-center items-center md:left-[25%]">
         <Image width={0} height={0} src={icon} alt="" />
