@@ -56,6 +56,6 @@ Users should be able to:
 ## Author
 
 - Website - [Emerenini Cynthia Ngozi](https://www.linkedin.com/in/emerenini-cynthia-ngozi)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@cindyeme](https://www.frontendmentor.io/profile/cindyeme)
 - Twitter - [@cynthiaengozi1](https://www.twitter.com/cynthiaengozi1)
 
